@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Outcomes of Assistive Robots for Dementia Patients</title>
+  <meta name="description" content="Interactive visualizations of what published studies report about assistive robots for people living with dementia.">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/d3@7" defer></script>
+  <script src="js/nav.js" defer></script>
+  <script src="js/home.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main">
+      <a class="logo" href="index.html" aria-label="Outcomes of Assistive Robots for Dementia Patients, home">
+        <svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+          <circle cx="20" cy="20" r="18" fill="#fff" stroke="#7b8794" stroke-width="2"/>
+          <rect x="9" y="10.5" width="22" height="19" rx="7.5" fill="#5d646e"/>
+          <ellipse cx="15.5" cy="18" rx="1.7" ry="2.4" fill="#fff"/>
+          <ellipse cx="24.5" cy="18" rx="1.7" ry="2.4" fill="#fff"/>
+          <path d="M15.5 22.5 Q20 27.5 24.5 22.5 Z" fill="#fff"/>
+        </svg>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li class="dropdown">
+          <button class="dropdown-toggle" type="button" aria-expanded="false" aria-controls="visualizations-menu">Visualizations</button>
+          <ul class="dropdown-menu" id="visualizations-menu">
+            <li><a href="wordcloud.html">Word Cloud</a></li>
+            <li><a href="bubbles.html">Bubble Graph</a></li>
+            <li><a href="matrix.html">Matrix</a></li>
+          </ul>
+        </li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Outcomes of<br>Assistive Robots<br>for Dementia Patients</h1>
+        <p>Explore what published studies report about how assistive robots affect people living with dementia, from mood and agitation to social interaction and quality of life.</p>
+        <a class="button" href="wordcloud.html">Explore the Data <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="hero-art" id="hero-art"></div>
+    </section>
+
+    <section class="tiles" id="visualizations" aria-label="Visualizations">
+      <a class="tile" href="wordcloud.html">
+        <h2>Word Cloud</h2>
+        <p>View common outcomes</p>
+        <div class="tile-preview" id="preview-wordcloud" aria-hidden="true"></div>
+      </a>
+      <a class="tile" href="bubbles.html">
+        <h2>Bubble Graph</h2>
+        <p>Compare study sizes</p>
+        <div class="tile-preview" id="preview-bubbles" aria-hidden="true"></div>
+      </a>
+      <a class="tile" href="matrix.html">
+        <h2>Matrix</h2>
+        <p>Compare outcomes</p>
+        <div class="tile-preview" id="preview-matrix" aria-hidden="true"></div>
+      </a>
+    </section>
+  </main>
+</body>
+</html>
