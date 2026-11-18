@@ -4,7 +4,6 @@ const PREVIEW_WIDTH = 240;
 const PREVIEW_HEIGHT = 140;
 const OUTLINE = "#7b8794";
 
-// Placeholder values until the cleaned study data is ready.
 const previewWords = [
   { text: "social", weight: 10 },
   { text: "engagement", weight: 9 },
