@@ -101,7 +101,7 @@ function drawRobot(g) {
   const arm = "M238,248 C252,300 260,336 284,360";
 
   add(g, "path", { d: "M100,430 V262 Q100,212 150,212 H200 Q250,212 250,262 V430 Z", fill: "#fff", ...line });
-  add(g, "rect", { x: 80, y: 236, width: 32, height: 150, rx: 16, fill: "#fff", ...line });
+  add(g, "rect", { x: 95, y: 236, width: 32, height: 150, rx: 16, fill: "#fff", ...line });
   add(g, "path", { d: arm, fill: "none", stroke: OUTLINE, "stroke-width": 33, "stroke-linecap": "round" });
   add(g, "path", { d: arm, fill: "none", stroke: "#fff", "stroke-width": 28, "stroke-linecap": "round" });
   add(g, "rect", { x: 143, y: 198, width: 64, height: 18, rx: 9, fill: "#e8ecf1", ...line });
