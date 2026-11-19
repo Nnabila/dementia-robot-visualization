@@ -8,7 +8,6 @@ export class WordCloud {
       throw new Error(`Container "${containerSelector}" not found.`);
     }
 
-    // Configurable options with sensible defaults
     this.config = {
       file1: options.file1 || "file1.txt",
       file2: options.file2 || "file2.txt",
@@ -39,84 +38,9 @@ export class WordCloud {
   }
 
   initDOM() {
-    // Use Shadow DOM to isolate component styles
+    
     this.shadow = this.container.attachShadow({ mode: "open" });
-
     this.shadow.innerHTML = `
-      <style>
-        :host {
-          display: block;
-          font-family: sans-serif;
-          position: relative;
-        }
-        .controls {
-          display: flex;
-          flex-wrap: wrap;
-          align-items: center;
-          gap: 24px;
-          margin-bottom: 14px;
-        }
-        .search-container {
-          display: flex;
-          align-items: center;
-          gap: 6px;
-        }
-        input {
-          padding: 6px 10px;
-          font-size: 14px;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-          width: 210px;
-        }
-        button {
-          padding: 6px 10px;
-          font-size: 13px;
-          cursor: pointer;
-          background: #f2f2f2;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-        }
-        .legend {
-          display: flex;
-          gap: 18px;
-          user-select: none;
-        }
-        .legend-item {
-          display: flex;
-          align-items: center;
-          gap: 6px;
-          cursor: pointer;
-          font-size: 14px;
-          transition: opacity 0.2s;
-        }
-        .legend-item.inactive {
-          opacity: 0.35;
-          text-decoration: line-through;
-        }
-        .legend-swatch {
-          width: 14px;
-          height: 14px;
-          border-radius: 3px;
-        }
-        .tooltip {
-          position: fixed;
-          pointer-events: none;
-          background: rgba(20, 20, 20, 0.9);
-          color: #fff;
-          padding: 8px 12px;
-          border-radius: 4px;
-          font-size: 13px;
-          line-height: 1.4;
-          opacity: 0;
-          transition: opacity 0.15s;
-          z-index: 1000;
-        }
-        text.word {
-          cursor: pointer;
-          transition: opacity 0.2s, stroke 0.2s;
-        }
-      </style>
-
       <div class="controls">
         <div class="search-container">
           <input type="text" class="search-input" placeholder="Search or highlight words..." />
@@ -127,6 +51,10 @@ export class WordCloud {
       <div class="canvas"></div>
       <div class="tooltip"></div>
     `;
+    const styleLink = document.createElement("link");
+    styleLink.rel = "stylesheet";
+    styleLink.href = "css/style.css";
+    this.shadow.append(styleLink);    
   }
 
   async loadAndRender() {
