@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Word Cloud</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/d3@7" defer></script>
+  <script src="js/nav.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3-cloud@1.2.7/build/d3.layout.cloud.js" defer></script>  
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main">
+      <a class="logo" href="index.html" aria-label="Outcomes of Assistive Robots for Dementia Patients, home">
+        <svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+          <circle cx="20" cy="20" r="18" fill="#fff" stroke="#7b8794" stroke-width="2"/>
+          <rect x="9" y="10.5" width="22" height="19" rx="7.5" fill="#5d646e"/>
+          <ellipse cx="15.5" cy="18" rx="1.7" ry="2.4" fill="#fff"/>
+          <ellipse cx="24.5" cy="18" rx="1.7" ry="2.4" fill="#fff"/>
+          <path d="M15.5 22.5 Q20 27.5 24.5 22.5 Z" fill="#fff"/>
+        </svg>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li class="dropdown">
+          <button class="dropdown-toggle" type="button" aria-expanded="false" aria-controls="visualizations-menu">Visualizations</button>
+          <ul class="dropdown-menu" id="visualizations-menu">
+            <li><a href="wordcloud.html">Word Cloud</a></li>
+            <li><a href="bubbles.html">Bubble Graph</a></li>
+            <li><a href="matrix.html">Matrix</a></li>
+          </ul>
+        </li>
+        <li><a href="statistics.html">Statistics</a></li>
+      </ul>
+    </nav>
+  </header>  <div id="my-wordcloud"></div>
+
+  <script type="module">
+    import { WordCloud } from "./js/WordCloud.js";
+
+    new WordCloud("#my-wordcloud", {
+      file1: "study2021.txt",
+      file2: "study2022.txt",
+      label1: "2021 Study",
+      label2: "2022 Study",
+      labelBoth: "Shared Terms",
+      width: 900,
+      height: 550
+    });
+  </script>
+</body>
+</html>
